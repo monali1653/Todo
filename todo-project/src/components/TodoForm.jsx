@@ -7,7 +7,7 @@ function TodoForm() {
     const {addTodo} = useTodo()
 
     const add = (e) => {
-        e.preventdefault()
+        e.preventDefault()
         if(!todo) return
         addTodo({id:Date.now(), todo: todo, completed: false})
         setTodo("")
@@ -18,13 +18,13 @@ function TodoForm() {
       <input
         type="text"
         placeholder="Add Todo..."
-        className="w-full px-3 py-1.5 outline-none bg-white text-black border border-black rounded-4xl"
+        className="w-full px-3 py-1.5 outline-none bg-white text-black border-2 border-black rounded-4xl "
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
       />
       <button
         type="submit"
-        className="px-4 py-1.5 text-white border border-black rounded-4xl"
+        className="px-4 py-1.5 text-white border-2 border-black rounded-4xl"
         style={{ backgroundColor: '#7AA249' }}
       >
         Add
